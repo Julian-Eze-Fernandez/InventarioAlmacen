@@ -30,5 +30,20 @@ namespace Backend
             }
         }
 
+        public void Descontar(ref int contarAlimentos, ref int contarBebidas, ref int contarLimpieza, string categoria)
+        {
+            if (categoria == "Alimentos")
+            {
+                contarAlimentos--;
+            }
+            else if (categoria == "Bebidas")
+            {
+                contarBebidas--;
+            }
+            else if (categoria == "Limpieza")
+            {
+                contarLimpieza--;
+            }
+        }
     }
 }
