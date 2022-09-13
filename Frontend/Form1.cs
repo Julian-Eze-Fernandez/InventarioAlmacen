@@ -86,7 +86,7 @@ namespace Frontend
             if (!txtCodigo.Text.Any() || !txtNombre.Text.Any() || !cmbCategorias.Text.Any())
             {
                 bandera= true;
-                MessageBox.Show(this, "Datos invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Los datos no son válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return bandera;
