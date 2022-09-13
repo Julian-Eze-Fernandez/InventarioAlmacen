@@ -177,6 +177,7 @@
             // 
             // cmbCategorias
             // 
+            this.cmbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.Items.AddRange(new object[] {
             "Alimentos",
