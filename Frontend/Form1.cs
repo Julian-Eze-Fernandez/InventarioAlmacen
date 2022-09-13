@@ -79,14 +79,14 @@ namespace Frontend
                 {
                     bandera = true;
                     //txtPrecio.Text = "Error, ingrese un numero.";
-                    MessageBox.Show(this, "No se pueden cargar los datos porque no ingreso un valor tipo numero en el precio del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "No se pueden cargar los datos porque no ingreso un valor en el precio del producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 }
             }
             if (!txtCodigo.Text.Any() || !txtNombre.Text.Any() || !cmbCategorias.Text.Any())
             {
                 bandera= true;
-                MessageBox.Show(this, "No ingreso los datos correspondientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Datos invalidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return bandera;
