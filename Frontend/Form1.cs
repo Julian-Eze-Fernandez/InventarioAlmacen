@@ -13,7 +13,7 @@ namespace Frontend
 {
     public partial class Form1 : Form
     {
-        //Vari
+        //Variables
         int contAlimentos = 0;
         int contBebidas = 0;
         int contLimpieza = 0;
@@ -25,6 +25,7 @@ namespace Frontend
 
         Productos Producto = new Productos();
 
+        //Carga codigo, nombre, preico y catgoria en el data grid view
         private void btnCargar_Click(object sender, EventArgs e)
         {
             if (!Error())
@@ -50,6 +51,7 @@ namespace Frontend
                 txtNombre.Text = "";
                 txtPrecio.Text = "";
 
+                //Setea valores
                 Producto.Contar(ref contAlimentos, ref contBebidas, ref contLimpieza, Producto.CategoriaProducto);
                 lblCantAlimentos.Text = contAlimentos.ToString();
                 lblCantBebidas.Text = contBebidas.ToString();
@@ -57,21 +59,31 @@ namespace Frontend
             }
 
         }
-
+        //Borrar toda una fila del data grid view.
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            dgvProductos.Rows.Remove(dgvProductos.CurrentRow);
+            //Validacion por si se quiere borrar algo no seleccionado.
+            if (dgvProductos.CurrentRow == null)
+            {
+                MessageBox.Show(this, "Elija que fila quiere borrar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dgvProductos.Rows.Remove(dgvProductos.CurrentRow);
 
-            Producto.Descontar(ref contAlimentos, ref contBebidas, ref contLimpieza, Producto.CategoriaProducto);
-            lblCantAlimentos.Text = contAlimentos.ToString();
-            lblCantBebidas.Text = contBebidas.ToString();
-            lblCantLimpieza.Text = contLimpieza.ToString();
+                Producto.Descontar(ref contAlimentos, ref contBebidas, ref contLimpieza, Producto.CategoriaProducto);
+                lblCantAlimentos.Text = contAlimentos.ToString();
+                lblCantBebidas.Text = contBebidas.ToString();
+                lblCantLimpieza.Text = contLimpieza.ToString();
+            }
+            
         }
-
+        //Metodo que busca errores 
         private bool Error() 
         {
             bool bandera = false;
 
+            //Validacion por si el usuario ingresa caracteres en precio.
             for (int i = 0; i < txtPrecio.Text.Length; i++)
             {
                 char c = txtPrecio.Text[i];
@@ -83,6 +95,7 @@ namespace Frontend
                     break;
                 }
             }
+            //Validacion por si el usuario no lleno algun textbox.
             if (!txtCodigo.Text.Any() || !txtNombre.Text.Any() || !cmbCategorias.Text.Any())
             {
                 bandera= true;

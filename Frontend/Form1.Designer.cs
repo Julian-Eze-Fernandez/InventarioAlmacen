@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -52,7 +53,9 @@
             this.lblCantAlimentos = new System.Windows.Forms.Label();
             this.lblCantBebidas = new System.Windows.Forms.Label();
             this.lblCantLimpieza = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -263,10 +266,15 @@
             this.lblCantLimpieza.Size = new System.Drawing.Size(0, 13);
             this.lblCantLimpieza.TabIndex = 17;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(682, 423);
             this.Controls.Add(this.lblCantLimpieza);
             this.Controls.Add(this.lblCantBebidas);
@@ -289,6 +297,7 @@
             this.Name = "Form1";
             this.Text = "Inventario Almacen";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,6 +328,7 @@
         private System.Windows.Forms.Label lblCantAlimentos;
         private System.Windows.Forms.Label lblCantBebidas;
         private System.Windows.Forms.Label lblCantLimpieza;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

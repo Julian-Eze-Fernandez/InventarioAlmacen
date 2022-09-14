@@ -8,12 +8,13 @@ namespace Backend
 {
     public class Productos
     {
-       
+       //Getters y Setters
         public string CategoriaProducto { get; set; }
         public string CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
         public decimal PrecioProducto { get; set; }
 
+        //Metodo que suma productos
         public void Contar(ref int contarAlimentos, ref int contarBebidas, ref int contarLimpieza, string categoria)
         {
             if (categoria == "Alimentos")
@@ -30,6 +31,7 @@ namespace Backend
             }
         }
 
+        //Metodo que resta productos
         public void Descontar(ref int contarAlimentos, ref int contarBebidas, ref int contarLimpieza, string categoria)
         {
             if (categoria == "Alimentos")
