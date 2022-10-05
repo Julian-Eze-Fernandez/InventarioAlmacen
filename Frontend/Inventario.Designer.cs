@@ -1,6 +1,6 @@
 ﻿namespace Frontend
 {
-    partial class Form1
+    partial class Inventario
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -54,6 +54,7 @@
             this.lblCantBebidas = new System.Windows.Forms.Label();
             this.lblCantLimpieza = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnVentas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -270,12 +271,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Form1
+            // btnVentas
+            // 
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Location = new System.Drawing.Point(19, 292);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(85, 30);
+            this.btnVentas.TabIndex = 19;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(682, 423);
+            this.ClientSize = new System.Drawing.Size(685, 428);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.lblCantLimpieza);
             this.Controls.Add(this.lblCantBebidas);
             this.Controls.Add(this.lblCantAlimentos);
@@ -294,7 +307,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "Form1";
+            this.Name = "Inventario";
             this.Text = "Inventario Almacen";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -329,6 +342,7 @@
         private System.Windows.Forms.Label lblCantBebidas;
         private System.Windows.Forms.Label lblCantLimpieza;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnVentas;
     }
 }
 

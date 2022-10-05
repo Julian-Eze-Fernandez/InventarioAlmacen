@@ -11,25 +11,29 @@ using Backend;
 
 namespace Frontend
 {
-    public partial class Form1 : Form
+    public partial class Inventario : Form
     {
         //Variables
         int contAlimentos = 0;
         int contBebidas = 0;
         int contLimpieza = 0;
 
-        public Form1()
+        public Inventario()
         {
             InitializeComponent();
         }
 
         Productos Producto = new Productos();
+        List<string> listaCodigos = new List<string>();
 
         //Carga codigo, nombre, preico y catgoria en el data grid view
         private void btnCargar_Click(object sender, EventArgs e)
         {
             if (!Error())
             {
+                //Guarda codigo dentro de lista
+                listaCodigos.Add(txtCodigo.Text);
+
                 //Setea valores del atributo
                 Producto.CategoriaProducto = cmbCategorias.Text;
                 Producto.CodigoProducto = txtCodigo.Text;
@@ -101,8 +105,21 @@ namespace Frontend
                 bandera= true;
                 MessageBox.Show(this, "Los datos no son válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //Validacion para que no se repita un codigo.
+            if (listaCodigos.Contains(txtCodigo.Text))
+            {
+                bandera = true;
+                MessageBox.Show(this, "ERROR, Codigo Repetido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             return bandera;
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            Form ventas = new Ventas();
+
+            ventas.Show();
         }
     }
 }
